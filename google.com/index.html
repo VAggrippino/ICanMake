@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Engine</title>
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -15,8 +17,8 @@
                 <ul>
                     <li><a href="#">Email</a></li>
                     <li><a href="#">Images</a></li>
-                    <li><button>O</button></li>
-                    <li><button>Sign In</button></li>
+                    <li><button class="otherAppsButton"><span class="a11yText">Other Apps</span><i class="fa-solid fa-shapes"></i></button></li>
+                    <li><button class="signInButton">Sign In</button></li>
                 </ul>
             </nav>
         </header>
@@ -31,9 +33,9 @@
             </div>
             <form class="search" action="#" method="get" class="search">
                 <div class="search--field">
-                    <div class="search--field--icon">I</div>
+                    <div class="search--field--icon"><i class="fa-solid fa-magnifying-glass"></i></div>
                     <input class="search--field--input" type="text" name="query" id="query">
-                    <div class="search--field--icon">V</div>
+                    <div class="search--field--icon"><i class="fa-solid fa-microphone"></i></div>
                 </div>
                 <div class="search--buttons">
                     <button>Search</button>
@@ -41,8 +43,8 @@
                 </div>
             </form>
             <div class="languagePicker">
-                <label for="languagePicker--language">Search offered in:</label>
-                <select name="languagePicker--language" id="languagePicker--language">
+                <label class="languagePicker--label" for="languagePicker--language">Search offered in:</label>
+                <select class="languagePicker--language" name="languagePicker--language" id="languagePicker--language">
                     <option value="language1">Language 1</option>
                     <option value="language2">Language 2</option>
                     <option value="language3">Language 3</option>
@@ -57,9 +59,12 @@
             </div>
         </main>
         <section class="geolocation">
-            <p>Your Location: Malaysia <a href="#">More Info</a></p>
+            <p>
+                Your Location: Malaysia
+                <button class="geolocation--more"><span class="a11yText">More Info</span><i class="fa-solid fa-globe"></i></button>
+            </p>
         </section>
-        <footer>
+        <footer class="footer">
             <ul>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Advertising</a></li>

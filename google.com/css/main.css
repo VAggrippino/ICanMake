@@ -1,11 +1,46 @@
 :root {
     --header-height: 3rem;
     --header-padding-inline: 1rem;
+    --button-border-radius: 5px;
+    --light-gray: #eee;
 }
 
 body {
     margin: 0;
     overflow: hidden;
+    font-family: sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+button {
+    background-color: var(--light-gray);
+    border-radius: var(--button-border-radius);
+    border-style: none;
+    height: 2rem;
+    padding-inline: 1.5em;
+}
+
+.a11yText {
+    display: block;
+    position: absolute;
+    left: -9999px;
+}
+
+button:active {
+    background-color: #ccc;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -17,17 +52,17 @@ body {
 .header {
     display: flex;
     justify-content: flex-end;
-    height: var(--header-height);
 }
 
 .header, .geolocation, .footer {
     padding-inline: var(--header-padding-inline);
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
 }
 
 .header--nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
     height: 100%;
 }
 
@@ -35,6 +70,29 @@ body {
     display: inline-flex;
     height: 100%;
     align-items: center;
+    padding-inline: 0.3rem;
+}
+
+.otherAppsButton {
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border-style: none;
+}
+
+.signInButton {
+    height: 2rem;
+    border-style: none;
+    background-color: royalblue;
+    color: white;
+}
+
+.signInButton:focus, .signInButton:hover {
+    background-color: cornflowerblue;
+}
+
+.signInButton:active {
+    color: silver;
 }
 
 main {
@@ -47,7 +105,10 @@ main {
 }
 
 .branding {
+    font-weight: bold;
+    -webkit-text-stroke: 1px silver;
     font-size: 0;
+    margin: 2rem;
 }
 
 .branding > span {
@@ -66,7 +127,7 @@ main {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
-    padding-block: 1.5rem;
+    margin-bottom: 1.5rem;
 }
 
 .search--field {
@@ -98,12 +159,39 @@ main {
     justify-content: center;
 }
 
-footer {
+.languagePicker--label {
+    padding-right: 1rem;
+}
+
+.geolocation {
+    border-bottom: 1px solid silver;
+}
+
+.geolocation--more {
+    padding: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: blue;
+}
+
+.geolocation--more:active, .geolocation--more:hover {
+    border: 1px solid blue;
+}
+
+.geolocation, .footer {
+    background-color: var(--light-gray);
+}
+
+.footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-footer li {
+.footer li {
     display: inline-block;
+}
+
+.footer a {
+    padding-inline: 0.3rem;
 }
