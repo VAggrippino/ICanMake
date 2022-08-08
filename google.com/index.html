@@ -5,64 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Search Engine</title>
+
+    <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <li><a href="#">Email</a></li>
-            <li><a href="#">Images</a></li>
-            <li><button>O</button></li>
-            <li><button>Sign In</button></li>
-        </nav>
-    </header>
-    <main>
-        <div class="branding">
-            <span>S</span>
-            <span>e</span>
-            <span>a</span>
-            <span>r</span>
-            <span>c</span>
-            <span>h</span>
-        </div>
-        <form action="#" method="get" class="search">
-            <div class="search--input">
-                <div class="icon">I</div>
-                <input type="text" name="query" id="query">
+    <div class="container">
+        <header class="header">
+            <nav class="header--nav">
+                <ul>
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Images</a></li>
+                    <li><button>O</button></li>
+                    <li><button>Sign In</button></li>
+                </ul>
+            </nav>
+        </header>
+        <main>
+            <div class="branding">
+                <span>S</span>
+                <span>e</span>
+                <span>a</span>
+                <span>r</span>
+                <span>c</span>
+                <span>h</span>
             </div>
-            <div class="search--buttons">
-                <button>Search</button>
-                <button>I'm Feeling Lucky</button>
+            <form class="search" action="#" method="get" class="search">
+                <div class="search--field">
+                    <div class="search--field--icon">I</div>
+                    <input class="search--field--input" type="text" name="query" id="query">
+                    <div class="search--field--icon">V</div>
+                </div>
+                <div class="search--buttons">
+                    <button>Search</button>
+                    <button>I'm Feeling Lucky</button>
+                </div>
+            </form>
+            <div class="languagePicker">
+                <label for="languagePicker--language">Search offered in:</label>
+                <select name="languagePicker--language" id="languagePicker--language">
+                    <option value="language1">Language 1</option>
+                    <option value="language2">Language 2</option>
+                    <option value="language3">Language 3</option>
+                    <option value="language4">Language 4</option>
+                    <option value="language5">Language 5</option>
+                    <option value="language6">Language 6</option>
+                    <option value="language7">Language 7</option>
+                    <option value="language8">Language 8</option>
+                    <option value="language9">Language 9</option>
+                    <option value="language10">Language 10</option>
+                </select>
             </div>
-        </form>
-        <div class="languagePicker">
-            <label for="languagePicker--language"></label>
-            <select name="languagePicker--language" id="languagePicker--language">
-                <option value="language1">Language 1</option>
-                <option value="language2">Language 2</option>
-                <option value="language3">Language 3</option>
-                <option value="language4">Language 4</option>
-                <option value="language5">Language 5</option>
-                <option value="language6">Language 6</option>
-                <option value="language7">Language 7</option>
-                <option value="language8">Language 8</option>
-                <option value="language9">Language 9</option>
-                <option value="language10">Language 10</option>
-            </select>
-        </div>
-    </main>
-    <section class="geolocation"><a href="#">Malaysia</a></section>
-    <footer>
-        <ul>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Advertising</a></li>
-            <li><a href="#">Business</a></li>
-            <li><a href="#">How Search Works</a></li>
-        </ul>
-        <ul>
-            <li><a href="#">Privacy</a></li>
-            <li><a href="#">Terms</a></li>
-            <li><a href="#">Settings</a></li>
-        </ul>
-    </footer>
+        </main>
+        <section class="geolocation">
+            <p>Your Location: Malaysia <a href="#">More Info</a></p>
+        </section>
+        <footer>
+            <ul>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Advertising</a></li>
+                <li><a href="#">Business</a></li>
+                <li><a href="#">How Search Works</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">Privacy</a></li>
+                <li><a href="#">Terms</a></li>
+                <li><a href="#">Settings</a></li>
+            </ul>
+        </footer>
+    </div>
 </body>
 </html>
