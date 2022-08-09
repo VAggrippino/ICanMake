@@ -20,12 +20,15 @@ a:hover {
     text-decoration: underline;
 }
 
-button {
+.button {
     background-color: var(--light-gray);
     border-radius: var(--button-border-radius);
     border-style: none;
     height: 2rem;
     padding-inline: 1.5em;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .a11yText {
@@ -34,7 +37,7 @@ button {
     left: -9999px;
 }
 
-button:active {
+.button:active {
     background-color: #ccc;
 }
 
