@@ -1,5 +1,5 @@
 :root {
-    --header-height: 3rem;
+    --header-height: 4rem;
     --header-padding-inline: 1rem;
     --button-border-radius: 5px;
     --light-gray: #eee;
@@ -107,7 +107,6 @@ ul {
 
 main {
     flex: 100%;
-
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -115,22 +114,28 @@ main {
 }
 
 .branding {
+    --letter-size: 5rem;
+    --branding-margin: 1.5rem;
+    height: calc(((100% - var(--header-height) * 3)/2) - var(--branding-margin) + var(--letter-size) / 2);
     font-weight: bold;
-    -webkit-text-stroke: 1px silver;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.8);
+    /* This avoids the spaces between spans in the branding area */
     font-size: 0;
-    margin: 2rem;
+    margin: var(--branding-margin);
+    display: flex;
+    align-items: flex-end;
 }
 
 .branding > span {
-    font-size: 5rem;
+    font-size: var(--letter-size);
 }
 
-.branding :nth-child(1) { color: red; }
+.branding :nth-child(1) { color: indianred; }
 .branding :nth-child(2) { color: orange; }
 .branding :nth-child(3) { color: gold; }
-.branding :nth-child(4) { color: green; }
-.branding :nth-child(5) { color: blue; }
-.branding :nth-child(6) { color: purple; }
+.branding :nth-child(4) { color: mediumseagreen; }
+.branding :nth-child(5) { color: cornflowerblue; }
+.branding :nth-child(6) { color: mediumorchid; }
 
 .search {
     display: flex;
@@ -146,8 +151,9 @@ main {
 
 .search--field--input {
     width: 40vw;
-    max-width: 30em;
-    padding: 0.5rem 2rem;
+    max-width: 35rem;
+    min-width: 25rem;
+    padding: 0.75rem 2rem;
     border-radius: 1.25rem;
     border: 1px solid silver;
 }
