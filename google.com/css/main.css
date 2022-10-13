@@ -141,26 +141,34 @@ main {
 }
 
 .search--field {
-    border: 1px solid silver;
-    padding: 0.5rem 1rem;
     display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    border-radius: 1.2rem;
+}
+
+.search--field--input {
+    width: 40vw;
+    max-width: 30em;
+    padding: 0.5rem 2rem;
+    border-radius: 1.25rem;
+    border: 1px solid silver;
+}
+
+.search--field--input:focus {
+    outline-color: gray;
 }
 
 .search--field--icon {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0 0.25em;
+    position: relative;
 }
 
-.search--field--input {
-    width: 40vw;
-    border-style: none;
-    padding: 0;
-    text-align: center;
+.search--field--icon:first-of-type {
+    left: 1.5rem;
+}
+
+.search--field--icon:last-of-type {
+    right: 1.5rem;
 }
 
 .languagePicker {
