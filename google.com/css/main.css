@@ -3,6 +3,13 @@
     --header-padding-inline: 1rem;
     --button-border-radius: 5px;
     --light-gray: #eee;
+
+    /* These will all be replaced with JavaScript
+     * The otherApps dialog is not used if JavaScript isn't available. */
+    --oaDialogWidth: 15rem;
+    --oaDialogHeight: 15rem;
+    --oaDialogTop: var(--header-height);
+    --oaDialogLeft: 100px;
 }
 
 body {
@@ -46,7 +53,7 @@ ul {
     padding: 0;
 }
 
-.container {
+.index .container {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -197,4 +204,41 @@ main {
 
 .footer a {
     padding-inline: 0.3rem;
+}
+
+.otherApps .icons {
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    background: yellow;
+}
+
+.otherApps .icon {
+    outline: 1px solid red;
+}
+
+.otherApps .icon a {
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.otherApps .icon a, .otherApps .icon a:hover {
+    text-decoration: none;
+}
+
+.otherApps .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.otherApps.inline {
+    position: fixed;
+    top: var(--oadialog-top);
+    right: var(--oadialog-right);
+    width: var(--oadialog-width);
+    height: var(--oadialog-height);
 }
