@@ -147,6 +147,8 @@ main {
 
 .search--field {
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .search--field--input {
@@ -167,6 +169,10 @@ main {
     justify-content: center;
     align-items: center;
     position: relative;
+    width: 1em;
+    height: 1em;
+    display: grid;
+    place-items: center;
 }
 
 .search--field--icon:first-of-type {
@@ -175,6 +181,24 @@ main {
 
 .search--field--icon:last-of-type {
     right: 1.5rem;
+
+    background-image: linear-gradient(to bottom,
+        black 0 50%,
+        cornflowerblue 50% 75%, indianred, orange, gold, mediumseagreen, orchid
+    );
+
+    background-size: auto 200%;
+    background-position: top;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+
+    transition-property: background-position;
+    transition-duration: 100ms;
+}
+
+.search--field--input:focus ~ .search--field--icon {
+    background-position: bottom;
 }
 
 .languagePicker {
