@@ -122,6 +122,17 @@ main {
     font-size: var(--letter-size);
 }
 
+.branding > span:hover {
+    animation-name: wiggle;
+    animation-duration: 500ms;
+}
+
+@keyframes wiggle {
+    0%   { transform: rotate(15deg)  }
+    50%  { transform: rotate(-15deg) }
+    100% { transform: rotate(0deg)   }
+}
+
 .branding :nth-child(1) { color: indianred; }
 .branding :nth-child(2) { color: orange; }
 .branding :nth-child(3) { color: gold; }
