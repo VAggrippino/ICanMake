@@ -11,6 +11,7 @@ function fetchOtherApps() {
 
 window.addEventListener(`load`, () => {
     const otherAppsButton = document.querySelector(`.otherAppsButton`);
+    /*
     otherAppsButton.addEventListener(`click`, (e) => {
         e.preventDefault();
 
@@ -33,4 +34,5 @@ window.addEventListener(`load`, () => {
             document.body.appendChild(otherApps);
         });
     });
+    */
 })
