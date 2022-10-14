@@ -1,14 +1,3 @@
-function fetchOtherApps() {
-    return fetch(`otherApps.html`)
-        .then(response => response.text())
-        .then((rt) => {
-            const rtDom = new DOMParser().parseFromString(rt, `text/html`);
-            console.log(rtDom);
-            const icons = rtDom.querySelector(`.otherApps .icons`).outerHTML;
-            return icons;
-        });
-}
-
 window.addEventListener(`load`, () => {
     const otherAppsButton = document.querySelector(`.otherAppsButton`);
     otherAppsButton.addEventListener(`click`, (event) => {
