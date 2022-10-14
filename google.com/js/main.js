@@ -23,7 +23,7 @@ window.addEventListener(`load`, () => {
     });
 
     const geolocationCountry = document.querySelector(`.geolocation--country`);
-    fetch(`http://ip-api.com/json/`)
+    fetch(`https://www.aggrippino.com/ipgeolocation.php`)
         .then((response) => {
             if (!response.ok) {
                 throw new Error(`Response was not ok.`);
@@ -32,7 +32,7 @@ window.addEventListener(`load`, () => {
         })
         .then((data) => {
             console.log(data);
-            geolocationCountry.innerHTML = data.country;
+            geolocationCountry.innerHTML = data.country_name;
 
             const info = document.querySelector(`.geolocation--info`);
             const table = info.querySelector(`table`);

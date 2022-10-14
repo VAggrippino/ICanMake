@@ -274,7 +274,8 @@ label[for="geolocation--more"]:hover {
 }
 
 .geolocation--more:checked ~ .geolocation--info {
-    max-height: 30rem;
+    max-height: 20rem;
+    overflow: auto;
 }
 
 
