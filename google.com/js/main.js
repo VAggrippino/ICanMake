@@ -27,7 +27,19 @@ window.addEventListener(`load`, () => {
             const container = document.querySelector(`.container`);
             const main = container.querySelector(`.main`);
             container.insertBefore(otherAppsFrame, main);
+
+            setTimeout(() => window.addEventListener(`click`, removeOtherAppsFrame), 0);
         }
         
     });
 });
+
+let removeOtherAppsFrame;
+removeOtherAppsFrame = () => {
+    const otherAppsFrame = document.querySelector(`.otherAppsFrame`);
+    otherAppsFrame.parentNode.removeChild(otherAppsFrame);
+    window.removeEventListener(`click`, removeOtherAppsFrame);
+
+    const otherAppsButton = document.querySelector(`.otherAppsButton`);
+    otherAppsButton.classList.remove(`active`);
+}
