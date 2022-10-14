@@ -65,9 +65,20 @@
         </main>
         <section class="geolocation">
             <p>
-                Your Location: Malaysia
-                <a class="button geolocation--more"><span class="a11yText">More Info</span><i class="fa-solid fa-globe"></i></a>
+                Your Location: <span class="geolocation--country"></span>
             </p>
+            <input type="checkbox" class="geolocation--more" id="geolocation--more">
+            <label for="geolocation--more">More Info</label>
+            <div class="geolocation--info">
+                <table>
+                    <tr>
+                        <td colspan="2">
+                            This information was retrieved using the free API at
+                            ip-api.com.
+                        </td>
+                    </tr>
+                </table>
+            </div>
         </section>
         <footer class="footer">
             <ul>

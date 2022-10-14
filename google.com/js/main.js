@@ -21,6 +21,38 @@ window.addEventListener(`load`, () => {
         }
         
     });
+
+    const geolocationCountry = document.querySelector(`.geolocation--country`);
+    fetch(`http://ip-api.com/json/`)
+        .then((response) => {
+            if (!response.ok) {
+                throw new Error(`Response was not ok.`);
+            }
+            return response.json();
+        })
+        .then((data) => {
+            console.log(data);
+            geolocationCountry.innerHTML = data.country;
+
+            const info = document.querySelector(`.geolocation--info`);
+            const table = info.querySelector(`table`);
+            for (const key in data) {
+                const tr = document.createElement(`tr`);
+                const th = document.createElement(`th`);
+                const td = document.createElement(`td`);
+
+                th.appendChild(document.createTextNode(key));
+                td.appendChild(document.createTextNode(data[key]));
+
+                tr.appendChild(th);
+                tr.appendChild(td);
+                table.appendChild(tr);
+            }
+        })
+        .catch((error) => {
+            geolocationCountry.innerHTML = `<span class="error">&lt;Unavailable&gt; (Request Blocked?)</span>`;
+            console.error(`An error occurred during fetch operation: `, error);
+        });
 });
 
 let removeOtherAppsFrame;

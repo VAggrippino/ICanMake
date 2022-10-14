@@ -222,23 +222,58 @@ main {
 
 .geolocation {
     border-bottom: 1px solid silver;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.geolocation--info table {
+    margin: 1rem;
+}
+
+.geolocation--info th, .geolocation--info td {
+    border: 1px solid white;
+}
+
+label[for="geolocation--more"] {
+    background-color: silver;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid transparent;
+    border-radius: var(--button-border-radius);
+}
+
+label[for="geolocation--more"]:hover {
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+.geolocation--more:checked ~ label[for="geolocation--more"] {
+    border: 1px inset gray;
 }
 
 .geolocation--more {
-    padding: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    color: blue;
+    position: absolute;
+    left: -999cm;
 }
 
-.geolocation--more:active, .geolocation--more:hover {
-    border: 1px solid blue;
+.geolocation--info {
+    flex: 100%;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 500ms;
 }
+
+.geolocation--more:checked ~ .geolocation--info {
+    max-height: 30rem;
+}
+
 
 .geolocation, .footer {
     background-color: var(--light-gray);
     padding-inline: var(--header-padding-inline);
+    /*
     height: var(--header-height);
+    */
+    flex: var(--header-height);
     display: flex;
     align-items: center;
 }
@@ -337,4 +372,8 @@ main {
 
 .button:active {
     background-color: #ccc;
+}
+
+.error {
+    color: crimson;
 }
