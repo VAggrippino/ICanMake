@@ -11,28 +11,23 @@ function fetchOtherApps() {
 
 window.addEventListener(`load`, () => {
     const otherAppsButton = document.querySelector(`.otherAppsButton`);
-    /*
-    otherAppsButton.addEventListener(`click`, (e) => {
-        e.preventDefault();
+    otherAppsButton.addEventListener(`click`, (event) => {
+        event.preventDefault();
 
-        fetchOtherApps().then((icons) => {
-            const otherApps = document.createElement(`DIV`);
-            otherApps.classList.add(`inline`, `otherApps`);
-            otherApps.innerHTML = icons;
+        let otherAppsFrame = document.querySelector(`.otherAppsFrame`);
+        if (otherAppsFrame !== null) { // The otherAppsFrame already exists
+            otherAppsFrame.parentNode.removeChild(otherAppsFrame);
+            otherAppsButton.classList.remove(`active`);
+        } else {
+            otherAppsButton.classList.add(`active`);
+            otherAppsFrame = document.createElement(`iframe`);
+            otherAppsFrame.classList.add(`otherAppsFrame`);
+            otherAppsFrame.setAttribute(`src`, `otherApps.html`);
 
-            const buttonMiddle = otherAppsButton.offsetLeft + otherAppsButton.offsetWidth / 2;
-            const buttonBottom = otherAppsButton.offsetTop + otherAppsButton.offsetHeight;
-
-            const root = document.querySelector(`:root`);
-            const rootStyle = getComputedStyle(root);
-            const pageWidth = document.body.offsetWidth;
-            const dialogWidth = rootStyle.getPropertyValue(`--oaDialogWidth`);
-            const oaDialogLeft = `calc(${pageWidth}px - ${dialogWidth} - ${buttonMiddle}px)`;
-            root.setProperty(`--oaDialogLeft`, oaDialogLeft);
-
-
-            document.body.appendChild(otherApps);
-        });
+            const container = document.querySelector(`.container`);
+            const main = container.querySelector(`.main`);
+            container.insertBefore(otherAppsFrame, main);
+        }
+        
     });
-    */
-})
+});
