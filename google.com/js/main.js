@@ -54,32 +54,17 @@ window.addEventListener(`load`, () => {
         });
 
     const branding_spans = document.querySelectorAll(`.branding > span`);
+    let lastId = 8675309; // Arbitrary number
     setInterval(() => {
-        const span0 = branding_spans[0];
-        const span1 = branding_spans[1];
-        const span2 = branding_spans[2];
-        const span3 = branding_spans[3];
-        const span4 = branding_spans[4];
-        const span5 = branding_spans[5];
+        const getId = () => Math.floor(Math.random() * branding_spans.length);
+        let id = getId();
+        while (lastId === id) id = getId();
+        lastId = id;
+        const span = branding_spans[id];
 
-        span0.classList.add(`wiggle`);
-        setTimeout(() => span0.classList.remove(`wiggle`), 1000);
-
-        setTimeout(() => span1.classList.add(`wiggle`), 500);
-        setTimeout(() => span1.classList.remove(`wiggle`), 1500);
-
-        setTimeout(() => span2.classList.add(`wiggle`), 1500);
-        setTimeout(() => span2.classList.remove(`wiggle`), 2000);
-
-        setTimeout(() => span3.classList.add(`wiggle`), 2000);
-        setTimeout(() => span3.classList.remove(`wiggle`), 2500);
-
-        setTimeout(() => span4.classList.add(`wiggle`), 2500);
-        setTimeout(() => span4.classList.remove(`wiggle`), 3000);
-
-        setTimeout(() => span5.classList.add(`wiggle`), 3500);
-        setTimeout(() => span5.classList.remove(`wiggle`), 4000);
-    }, 5000);
+        span.classList.add(`wiggle`);
+        setTimeout(() => span.classList.remove(`wiggle`), 500);
+    }, 3000);
 });
 
 let removeOtherAppsFrame;
