@@ -31,7 +31,6 @@ window.addEventListener(`load`, () => {
             return response.json();
         })
         .then((data) => {
-            console.log(data);
             geolocationCountry.innerHTML = data.country_name;
 
             const info = document.querySelector(`.geolocation--info`);
