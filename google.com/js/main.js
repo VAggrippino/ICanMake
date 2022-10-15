@@ -19,7 +19,6 @@ window.addEventListener(`load`, () => {
 
             setTimeout(() => window.addEventListener(`click`, removeOtherAppsFrame), 0);
         }
-        
     });
 
     const geolocationCountry = document.querySelector(`.geolocation--country`);
@@ -70,7 +69,9 @@ window.addEventListener(`load`, () => {
 let removeOtherAppsFrame;
 removeOtherAppsFrame = () => {
     const otherAppsFrame = document.querySelector(`.otherAppsFrame`);
-    otherAppsFrame.parentNode.removeChild(otherAppsFrame);
+    if (otherAppsFrame !== null) {
+        otherAppsFrame.parentNode.removeChild(otherAppsFrame);
+    }
     window.removeEventListener(`click`, removeOtherAppsFrame);
 
     const otherAppsButton = document.querySelector(`.otherAppsButton`);
