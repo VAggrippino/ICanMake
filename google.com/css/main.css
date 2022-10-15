@@ -157,10 +157,16 @@ main {
 .search--field--input {
     width: 40vw;
     max-width: 35rem;
-    min-width: 25rem;
+    min-width: 15rem;
     padding: 0.75rem 2rem;
     border-radius: 1.25rem;
     border: 1px solid var(--light-gray);
+}
+
+@media (max-width: 30rem) {
+    .search--field--input {
+        width: 75vw;
+    }
 }
 
 .search--field--input:hover, .search--field--input:focus {
@@ -301,6 +307,11 @@ label[for="geolocation--more"]:hover {
     justify-content: space-between;
 }
 
+.footer ul {
+    margin: 0;
+    padding: 0;
+}
+
 .footer li {
     display: inline-block;
 }
@@ -327,6 +338,8 @@ label[for="geolocation--more"]:hover {
     position: absolute;
     top: var(--header-height);
     right: calc(var(--signInButton-width) + var(--header--nav-gap) * 2);
+    background-color: white;
+    z-index: 9999;
 
     border: none;
     box-shadow: 0px 0px 2px 1px rgba(0, 0, 0, 0.3);
