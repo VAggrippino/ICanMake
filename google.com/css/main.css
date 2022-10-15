@@ -225,6 +225,8 @@ main {
     width: 100%;
     display: flex;
     justify-content: center;
+    align-items: center;
+    gap: 1rem;
 }
 
 .languagePicker--label {
@@ -389,3 +391,53 @@ label[for="geolocation--more"]:hover {
 .error {
     color: crimson;
 }
+
+/* GTranslate CSS */
+a.gflag {
+    vertical-align: middle;
+    font-size: 16px;
+    padding: 1px 0;
+    background-repeat: no-repeat;
+    background-image: url(//gtranslate.net/flags/16.png);
+}
+
+a.gflag img {
+    border: 0;
+}
+
+a.gflag:hover {
+    background-image: url(//gtranslate.net/flags/16a.png);
+}
+
+#goog-gt-tt {
+    display:none !important;
+}
+
+.goog-te-banner-frame {
+    display: none !important;
+}
+
+.goog-te-menu-value:hover {
+    text-decoration: none !important;
+}
+
+body {
+    top:0 !important;
+}
+
+#google_translate_element2 {
+    display: none !important;
+}
+/* /end GTranslate CSS */
+
+/* Custom GTranslate CSS */
+.languagePicker--gTranslate {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.languagePicker--gTranslate--flags {
+    font-size: 0;
+}
+/* /end Custom GTranslate CSS */
