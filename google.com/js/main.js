@@ -52,6 +52,34 @@ window.addEventListener(`load`, () => {
             geolocationCountry.innerHTML = `<span class="error">&lt;Unavailable&gt; (Request Blocked?)</span>`;
             console.error(`An error occurred during fetch operation: `, error);
         });
+
+    const branding_spans = document.querySelectorAll(`.branding > span`);
+    setInterval(() => {
+        const span0 = branding_spans[0];
+        const span1 = branding_spans[1];
+        const span2 = branding_spans[2];
+        const span3 = branding_spans[3];
+        const span4 = branding_spans[4];
+        const span5 = branding_spans[5];
+
+        span0.classList.add(`wiggle`);
+        setTimeout(() => span0.classList.remove(`wiggle`), 1000);
+
+        setTimeout(() => span1.classList.add(`wiggle`), 500);
+        setTimeout(() => span1.classList.remove(`wiggle`), 1500);
+
+        setTimeout(() => span2.classList.add(`wiggle`), 1500);
+        setTimeout(() => span2.classList.remove(`wiggle`), 2000);
+
+        setTimeout(() => span3.classList.add(`wiggle`), 2000);
+        setTimeout(() => span3.classList.remove(`wiggle`), 2500);
+
+        setTimeout(() => span4.classList.add(`wiggle`), 2500);
+        setTimeout(() => span4.classList.remove(`wiggle`), 3000);
+
+        setTimeout(() => span5.classList.add(`wiggle`), 3500);
+        setTimeout(() => span5.classList.remove(`wiggle`), 4000);
+    }, 5000);
 });
 
 let removeOtherAppsFrame;
