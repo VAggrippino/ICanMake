@@ -64,6 +64,8 @@ window.addEventListener(`load`, () => {
         span.classList.add(`wiggle`);
         setTimeout(() => span.classList.remove(`wiggle`), 500);
     }, 3000);
+
+    initGtranslate();
 });
 
 let removeOtherAppsFrame;
@@ -76,4 +78,19 @@ removeOtherAppsFrame = () => {
 
     const otherAppsButton = document.querySelector(`.otherAppsButton`);
     otherAppsButton.classList.remove(`active`);
+}
+
+function initGtranslate() {
+    const flags = document.querySelectorAll(`.gflag`);
+    flags.forEach((flag) => {
+        flag.addEventListener(`click`, (event) => {
+            event.preventDefault();
+            doGTranslate(flag.dataset.language);
+        });
+    });
+
+    const dropdown = document.querySelector(`.languagePicker--gTranslate--dropdown`);
+    dropdown.addEventListener(`change`, (event) => {
+        doGTranslate(event.target);
+    });
 }

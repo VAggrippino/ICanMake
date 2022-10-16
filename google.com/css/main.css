@@ -232,11 +232,13 @@ main {
 
 .languagePicker {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     gap: 1rem;
 }
+
+.languagePicker :nth-child(odd) { justify-self: end; }
+.languagePicker :nth-child(even) { justify-self: start; }
 
 .languagePicker--label {
     padding-right: 1rem;
@@ -293,9 +295,6 @@ label[for="geolocation--more"]:hover {
 .geolocation, .footer {
     background-color: var(--light-gray);
     padding-inline: var(--header-padding-inline);
-    /*
-    height: var(--header-height);
-    */
     flex: var(--header-height);
     display: flex;
     align-items: center;
@@ -454,6 +453,40 @@ body {
 }
 
 .languagePicker--gTranslate--flags {
-    font-size: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+a.gflag[data-language="en|en"]    { background-position: 0 0 }
+a.gflag[data-language="en|zh-CN"] { background-position: -300px 0 }
+a.gflag[data-language="en|tl"]    { background-position: -100px -300px }
+a.gflag[data-language="en|fr"]    { background-position: -200px -100px }
+a.gflag[data-language="en|de"]    { background-position: -300px -100px }
+a.gflag[data-language="en|id"]    { background-position: -300px -300px }
+a.gflag[data-language="en|it"]    { background-position: -600px -100px }
+a.gflag[data-language="en|ja"]    { background-position: -700px -100px }
+a.gflag[data-language="en|ko"]    { background-position: 0 -200px }
+a.gflag[data-language="en|ms"]    { background-position: -400px -500px }
+a.gflag[data-language="en|es"]    { background-position: -600px -200px }
+
+a.gflag {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+}
+
+@media (max-width: 30rem) {
+    a.gflag {
+        width: 32px;
+        height: 32px;
+        background-image: url(//gtranslate.net/flags/32.png);
+    }
+    a.gflag:hover {
+        background-image: url(//gtranslate.net/flags/32a.png);
+    }
+}
+
+.languagePicker--gTranslate--dropdown {
+    margin: 0.5rem;
 }
 /* /end Custom GTranslate CSS */

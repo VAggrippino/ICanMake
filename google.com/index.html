@@ -56,20 +56,20 @@
                 <div class="languagePicker--gTranslate">
                     <!-- GTranslate: https://gtranslate.io/ -->
                     <div class="languagePicker--gTranslate--flags">
-                        <a href="#" onclick="doGTranslate('en|en');return false;" title="English" class="gflag nturl" style="background-position:-0px -0px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="English" /></a>
-                        <a href="#" onclick="doGTranslate('en|zh-CN');return false;" title="Chinese (Simplified)" class="gflag nturl" style="background-position:-300px -0px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Chinese (Simplified)" /></a>
-                        <a href="#" onclick="doGTranslate('en|tl');return false;" title="Filipino" class="gflag nturl" style="background-position:-100px -300px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Filipino" /></a>
-                        <a href="#" onclick="doGTranslate('en|fr');return false;" title="French" class="gflag nturl" style="background-position:-200px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="French" /></a>
-                        <a href="#" onclick="doGTranslate('en|de');return false;" title="German" class="gflag nturl" style="background-position:-300px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="German" /></a>
-                        <a href="#" onclick="doGTranslate('en|id');return false;" title="Indonesian" class="gflag nturl" style="background-position:-300px -300px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Indonesian" /></a>
-                        <a href="#" onclick="doGTranslate('en|it');return false;" title="Italian" class="gflag nturl" style="background-position:-600px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Italian" /></a>
-                        <a href="#" onclick="doGTranslate('en|ja');return false;" title="Japanese" class="gflag nturl" style="background-position:-700px -100px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Japanese" /></a>
-                        <a href="#" onclick="doGTranslate('en|ko');return false;" title="Korean" class="gflag nturl" style="background-position:-0px -200px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Korean" /></a>
-                        <a href="#" onclick="doGTranslate('en|ms');return false;" title="Malay" class="gflag nturl" style="background-position:-400px -500px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Malay" /></a>
-                        <a href="#" onclick="doGTranslate('en|es');return false;" title="Spanish" class="gflag nturl" style="background-position:-600px -200px;"><img src="//gtranslate.net/flags/blank.png" height="16" width="16" alt="Spanish" /></a>
+                        <a href="#" data-language='en|en' title="English" class="gflag nturl"></a>
+                        <a href="#" data-language='en|zh-CN' title="Chinese (Simplified)" class="gflag nturl"></a>
+                        <a href="#" data-language='en|tl' title="Filipino" class="gflag nturl"></a>
+                        <a href="#" data-language='en|fr' title="French" class="gflag nturl"></a>
+                        <a href="#" data-language='en|de' title="German" class="gflag nturl"></a>
+                        <a href="#" data-language='en|id' title="Indonesian" class="gflag nturl"></a>
+                        <a href="#" data-language='en|it' title="Italian" class="gflag nturl"></a>
+                        <a href="#" data-language='en|ja' title="Japanese" class="gflag nturl"></a>
+                        <a href="#" data-language='en|ko' title="Korean" class="gflag nturl"></a>
+                        <a href="#" data-language='en|ms' title="Malay" class="gflag nturl"></a>
+                        <a href="#" data-language='en|es' title="Spanish" class="gflag nturl"></a>
                     </div>
 
-                    <select onchange="doGTranslate(this);" id="gTranslate_language_picker">
+                    <select class="languagePicker--gTranslate--dropdown" id="gTranslate_language_picker">
                         <option value="">Select Language</option>
                         <option value="en|af">Afrikaans</option>
                         <option value="en|sq">Albanian</option>
