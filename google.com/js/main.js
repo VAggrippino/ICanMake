@@ -56,8 +56,11 @@ window.addEventListener(`load`, () => {
     let lastId = 8675309; // Arbitrary number
     setInterval(() => {
         const getId = () => Math.floor(Math.random() * branding_spans.length);
+
+        // Never pick the same letter twice
         let id = getId();
         while (lastId === id) id = getId();
+
         lastId = id;
         const span = branding_spans[id];
 
@@ -68,8 +71,7 @@ window.addEventListener(`load`, () => {
     initGtranslate();
 });
 
-let removeOtherAppsFrame;
-removeOtherAppsFrame = () => {
+const removeOtherAppsFrame = () => {
     const otherAppsFrame = document.querySelector(`.otherAppsFrame`);
     if (otherAppsFrame !== null) {
         otherAppsFrame.parentNode.removeChild(otherAppsFrame);
