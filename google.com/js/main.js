@@ -33,19 +33,8 @@ window.addEventListener(`load`, () => {
             geolocationCountry.innerHTML = data.country_name;
 
             const info = document.querySelector(`.geolocation--info`);
-            const table = info.querySelector(`table`);
-            for (const key in data) {
-                const tr = document.createElement(`tr`);
-                const th = document.createElement(`th`);
-                const td = document.createElement(`td`);
-
-                th.appendChild(document.createTextNode(key));
-                td.appendChild(document.createTextNode(data[key]));
-
-                tr.appendChild(th);
-                tr.appendChild(td);
-                table.appendChild(tr);
-            }
+            const data_table = tabularize(data);
+            info.appendChild(data_table);
         })
         .catch((error) => {
             geolocationCountry.innerHTML = `<span class="error">&lt;Unavailable&gt; (Request Blocked?)</span>`;
@@ -95,4 +84,34 @@ function initGtranslate() {
     dropdown.addEventListener(`change`, (event) => {
         doGTranslate(event.target);
     });
+}
+
+function tabularize(data) {
+    const table = document.createElement(`table`);
+    for (const key in data) {
+        const row = document.createElement(`tr`);
+        const value = (() => {
+            if (typeof(data[key]) === `object`) {
+                return tabularize(data[key]);
+            } else if (typeof(data[key]) === `string` && data[key].match(`https://ipgeolocation\.io/static/flags/.*\.png`)) {
+                const image = document.createElement(`img`);
+                image.setAttribute(`src`, data[key]);
+                image.setAttribute(`alt`, `Flag of `);
+                return image;
+            } else {
+                return document.createTextNode(data[key]);
+            }
+        })();
+
+        const heading = document.createElement(`th`);
+        heading.appendChild(document.createTextNode(key));
+
+        const cell = document.createElement(`td`);
+        cell.appendChild(value);
+
+        row.appendChild(heading);
+        row.appendChild(cell);
+        table.appendChild(row);
+    }
+    return table;
 }

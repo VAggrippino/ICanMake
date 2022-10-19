@@ -251,12 +251,23 @@ main {
     justify-content: space-between;
 }
 
-.geolocation--info table {
-    margin: 1rem;
+.geolocation--info .heading {
+    margin: 0;
 }
 
-.geolocation--info th, .geolocation--info td {
-    border: 1px solid white;
+.geolocation--info > table {
+    margin: 0.25rem 1rem;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+.geolocation--info :is(th, td) {
+    border: 1px solid black;
+    padding: 0.25rem 0.5rem;
+}
+
+.geolocation--info table img {
+    height: 1em;
 }
 
 label[for="geolocation--more"] {
